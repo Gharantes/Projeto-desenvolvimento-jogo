@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://b0orcf2elt0ig"]
+
+[ext_resource type="Script" uid="uid://csu601wgxyjld" path="res://game/game.gd" id="1_4fuuu"]
+[ext_resource type="PackedScene" uid="uid://3et1wn8i44be" path="res://characters/player/player.tscn" id="1_l1rk1"]
+[ext_resource type="PackedScene" uid="uid://ce11bxhiyk7y8" path="res://trees/pine_tree.tscn" id="2_vasa2"]
+
+[sub_resource type="Curve2D" id="Curve2D_dxrkv"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -56, -82, 0, 0, 0, 0, -58, 1139, 0, 0, 0, 0, 1999, 1145, 0, 0, 0, 0, 1982, -82, 0, 0, 0, 0, -56, -82)
+}
+point_count = 5
+
+[node name="Game" type="Node2D" unique_id=331711098]
+y_sort_enabled = true
+script = ExtResource("1_4fuuu")
+
+[node name="GameOverScreen" type="CanvasLayer" parent="." unique_id=974598608]
+unique_name_in_owner = true
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="GameOverScreen" unique_id=519590811]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="Label" type="Label" parent="GameOverScreen/ColorRect" unique_id=1439579866]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -43.5
+offset_top = -11.5
+offset_right = 43.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 100
+text = "Game Over"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=489855572]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1040995062]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Player" parent="." unique_id=1829480374 instance=ExtResource("1_l1rk1")]
+position = Vector2(964, 516)
+
+[node name="Path2D" type="Path2D" parent="Player" unique_id=993712580]
+position = Vector2(-964, -516)
+curve = SubResource("Curve2D_dxrkv")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Player/Path2D" unique_id=1256672372]
+unique_name_in_owner = true
+position = Vector2(-56, -82)
+rotation = 1.5724343
+
+[node name="PineTree" parent="." unique_id=1054235089 instance=ExtResource("2_vasa2")]
+position = Vector2(428, 602)
+
+[node name="PineTree2" parent="." unique_id=1620788290 instance=ExtResource("2_vasa2")]
+position = Vector2(1508, 602)
+
+[node name="PineTree3" parent="." unique_id=1879471153 instance=ExtResource("2_vasa2")]
+position = Vector2(959, 171)
+
+[node name="Timer" type="Timer" parent="." unique_id=1797227447]
+wait_time = 0.3
+autostart = true
+
+[connection signal="health_depleted" from="Player" to="." method="_on_player_health_depleted"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

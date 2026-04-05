@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://3et1wn8i44be"]
+
+[ext_resource type="PackedScene" uid="uid://pbmyh1qru7p" path="res://characters/player/happy_boo/happy_boo.tscn" id="1_oul6g"]
+[ext_resource type="Script" uid="uid://qroeipq8rv14" path="res://characters/player/player.gd" id="1_rkbax"]
+[ext_resource type="PackedScene" uid="uid://dl8tiw1bpd1nt" path="res://pistol/gun.tscn" id="3_exd8k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rkbax"]
+radius = 48.373547
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_exd8k"]
+radius = 56.142673
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5dc8e"]
+bg_color = Color(0.15294118, 0.16862746, 0.1882353, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exd8k"]
+bg_color = Color(0.3882353, 0.8, 0.37254903, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Player" type="CharacterBody2D" unique_id=1829480374]
+script = ExtResource("1_rkbax")
+
+[node name="HappyBoo" parent="." unique_id=1091727253 instance=ExtResource("1_oul6g")]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1207297326]
+shape = SubResource("CircleShape2D_rkbax")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1624330856]
+
+[node name="Gun" parent="." unique_id=717064472 instance=ExtResource("3_exd8k")]
+position = Vector2(0, -35)
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1915732115]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=116178925]
+shape = SubResource("CircleShape2D_exd8k")
+debug_color = Color(0.6782631, 0.5051922, 0, 0.41960785)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=398151419]
+unique_name_in_owner = true
+offset_left = -84.0
+offset_top = -131.0
+offset_right = 88.0
+offset_bottom = -104.0
+theme_override_styles/background = SubResource("StyleBoxFlat_5dc8e")
+theme_override_styles/fill = SubResource("StyleBoxFlat_exd8k")
+value = 100.0
+show_percentage = false
