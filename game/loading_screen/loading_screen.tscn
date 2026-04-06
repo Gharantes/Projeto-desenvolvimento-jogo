@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://bojp3s2n3ana8"]
+
+[ext_resource type="Script" uid="uid://bnt444ok36h6q" path="res://game/loading_screen/loading_screen.gd" id="1_oegrr"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ry7sf"]
+bg_color = Color(0.86036915, 0.8603692, 0.8603691, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oegrr"]
+bg_color = Color(0.17412573, 0.7524427, 0.26667652, 1)
+
+[node name="Loading Screen" type="Control" unique_id=238206869]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oegrr")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1262534468]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06053035, 0.06053035, 0.060530342, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1486630844]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.0
+offset_top = -27.0
+offset_right = 178.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=103312214]
+layout_mode = 2
+text = "Loading..."
+
+[node name="ProgressBar" type="ProgressBar" parent="VBoxContainer" unique_id=291261748]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.011087557, 0.011087585, 0.0110876355, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_ry7sf")
+theme_override_styles/fill = SubResource("StyleBoxFlat_oegrr")
+
+[node name="Timer" type="Timer" parent="." unique_id=1917014943]
+wait_time = 0.1
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,3 +1,8 @@
+res://game/loading_screen/
+res://game/settings_menu/
+res://game/main_menu/
+res://game/game_over_screen/
+res://game/pause_screen/
 res://pistol/
 res://characters/slime/
 res://trees/

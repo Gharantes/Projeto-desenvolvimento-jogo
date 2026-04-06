@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cxguhtibeeqqi"]
+
+[ext_resource type="Script" uid="uid://cupodp6vspwb7" path="res://game/game_over_screen/game_over_screen.gd" id="1_qhgmo"]
+
+[node name="GameOverScreen" type="Control" unique_id=1541215547]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qhgmo")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=955859312]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.78431374)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1582074734]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -271.5
+offset_top = -68.5
+offset_right = 271.5
+offset_bottom = 68.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1552110300]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "Game Over"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=1916509108]
+layout_mode = 2
+
+[node name="Restart Button" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1695283326]
+layout_mode = 2
+text = "Restart"
+
+[node name="Quit to Main Menu Button" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=9800780]
+layout_mode = 2
+text = "Quit to Main Menu
+"
+
+[node name="Quit to Desktop Button" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1888825849]
+layout_mode = 2
+text = "Quit to Desktop
+"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Restart Button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Quit to Main Menu Button" to="." method="_on_quit_to_main_menu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Quit to Desktop Button" to="." method="_on_quit_button_pressed"]

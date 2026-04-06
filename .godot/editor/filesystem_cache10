@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1775426904
+::res://::1775429429
 default_bus_layout.tres::AudioBusLayout::6564268947468103023::1771685366::0::1::::<><><>0<>0<><>::
 icon.png::CompressedTexture2D::15047351210411190::1771685366::1775396109::1::::<><><>0<>0<>1b715dbefff322edf369d96dc8dd5e44<>res://.godot/imported/icon.png-487276ed1e3a0c39cad0279d744ee560.ctex::
 ::res://addons/::1771685366
@@ -37,9 +37,12 @@ slime_body.png::CompressedTexture2D::6708746449635517821::1771685366::1775396109
 slime_body_hurt.png::CompressedTexture2D::341021517085413520::1771685366::1775396109::1::::<><><>0<>0<>a2e7652dcbcdfd52838f81ce70456416<>res://.godot/imported/slime_body_hurt.png-3f38b75e5ebee1f99a984b348a7e7f8b.ctex::
 slime_face.png::CompressedTexture2D::97260040276650809::1771685366::1775396109::1::::<><><>0<>0<>dc6b33b1876f30bed3031942090bb8fb<>res://.godot/imported/slime_face.png-561a1f87b138570340118953f07aab21.ctex::
 slime_hurt_eyes.png::CompressedTexture2D::7055182231326781259::1771685366::1775396109::1::::<><><>0<>0<>dfb8c9ee4ff4b7f0745c09e0b69cfcef<>res://.godot/imported/slime_hurt_eyes.png-711256b4a2a47dcea723d274f00b4628.ctex::
-::res://game/::1775422653
-game.gd::GDScript::6079456379472466573::1775422626::0::1::::<>Node2D<><>0<>0<><>::
-game.tscn::PackedScene::4171079128189274498::1775422653::0::1::::<><><>0<>0<><>::uid://csu601wgxyjld::::res://game/game.gd<>uid://3et1wn8i44be::::res://characters/player/player.tscn<>uid://ce11bxhiyk7y8::::res://trees/pine_tree.tscn
+::res://game/::1775430212
+game.gd::GDScript::6079456379472466573::1775429790::0::1::::<>Node2D<><>0<>0<><>::
+game.tscn::PackedScene::4171079128189274498::1775430214::0::1::::<><><>0<>0<><>::uid://csu601wgxyjld::::res://game/game.gd<>uid://3et1wn8i44be::::res://characters/player/player.tscn<>uid://rfge8x3nlu4r::::res://game/pause_screen/pause_screen.tscn<>uid://ce11bxhiyk7y8::::res://trees/pine_tree.tscn
+::res://game/pause_screen/::1775430212
+pause_screen.tscn::PackedScene::1203905445840144803::1775430212::0::1::::<><><>0<>0<><>::uid://bghh2wm5lp2aw::::res://game/pause_screen.gd
+pause_screen.gd::GDScript::2822478800614250602::1775430071::0::1::::<>CanvasLayer<><>0<>0<><>::
 ::res://pistol/::1775417515
 bullet.gd::GDScript::4620814042701746690::1775417515::0::1::::<>Area2D<><>0<>0<><>::
 bullet.tscn::PackedScene::3259107095961483168::1775417506::0::1::::<><><>0<>0<><>::uid://b63meq17074pa::::res://pistol/bullet.gd<>uid://bd4rrqj72amnx::::res://pistol/projectile.png

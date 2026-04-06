@@ -1,1 +1,14 @@
 res://game/game.tscn
+res://game/game.gd
+res://game/pause_screen.gd
+res://game/pause_screen/pause_screen.tscn
+res://game/pause_screen/pause_screen.gd
+res://game/game_over_screen/game_over_screen.tscn
+res://game/game_over_screen/game_over_screen.gd
+res://characters/player/player.gd
+res://game/main_menu/main_menu.tscn
+res://game/main_menu/main_menu.gd
+res://game/settings_menu/settings_menu.tscn
+res://game/settings_menu/settings_menu.gd
+res://game/loading_screen/loading_screen.tscn
+res://game/loading_screen/loading_screen.gd
