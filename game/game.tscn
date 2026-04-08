@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ce11bxhiyk7y8" path="res://trees/pine_tree.tscn" id="2_vasa2"]
 [ext_resource type="PackedScene" uid="uid://cxguhtibeeqqi" path="res://game/game_over_screen/game_over_screen.tscn" id="3_dxrkv"]
 [ext_resource type="PackedScene" uid="uid://cqughp7ro5w3" path="res://game/settings_menu/settings_menu.tscn" id="4_dakft"]
+[ext_resource type="PackedScene" uid="uid://gvejiimw4qd0" path="res://game/ui/round_countdown/round_countdown.tscn" id="5_u5opy"]
 
 [sub_resource type="Curve2D" id="Curve2D_dxrkv"]
 _data = {
@@ -30,6 +31,8 @@ visible = false
 [node name="SettingsMenu" parent="CanvasLayer" unique_id=807785419 instance=ExtResource("4_dakft")]
 unique_name_in_owner = true
 visible = false
+
+[node name="RoundCountdown" parent="CanvasLayer" unique_id=523677653 instance=ExtResource("5_u5opy")]
 
 [node name="GameBg" type="CanvasLayer" parent="." unique_id=489855572]
 layer = -1

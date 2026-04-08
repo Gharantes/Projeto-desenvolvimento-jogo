@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://2qjgma65pcsu" path="res://pistol/gun.gd" id="1_b7uwb"]
 [ext_resource type="Texture2D" uid="uid://coon1w77o334i" path="res://pistol/pistol.png" id="1_kmld4"]
+[ext_resource type="AudioStream" uid="uid://b4ggdavda3yv4" path="res://assets/sounds/cancel_4.wav" id="3_donny"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b7uwb"]
 radius = 378.0476
@@ -27,5 +28,8 @@ position = Vector2(26, -10)
 [node name="Timer" type="Timer" parent="." unique_id=1122534376]
 wait_time = 0.3
 autostart = true
+
+[node name="sfx_attack" type="AudioStreamPlayer2D" parent="." unique_id=1292240246]
+stream = ExtResource("3_donny")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://gvejiimw4qd0"]
+
+[node name="RoundCountdown" type="Control" unique_id=523677653]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1812794336]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1762692803]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=598237797]
+layout_mode = 2
+text = "Round Countdown: 30"
