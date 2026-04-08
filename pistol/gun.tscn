@@ -31,5 +31,6 @@ autostart = true
 
 [node name="sfx_attack" type="AudioStreamPlayer2D" parent="." unique_id=1292240246]
 stream = ExtResource("3_donny")
+bus = &"Audio"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

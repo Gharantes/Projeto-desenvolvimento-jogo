@@ -3,6 +3,7 @@ extends CharacterBody2D
 var health = 3
 
 @onready var player = get_node("/root/Game/Player")
+signal was_killed_by_player()
 
 func _ready() -> void:
 	%Slime.play_walk()
@@ -14,10 +15,16 @@ func _physics_process(delta: float) -> void:
 
 func take_damage():
 	health -= 1
-	%Slime.play_hurt()
-	if health == 0:
-		queue_free()
-		const SMOKE_SCENE = preload("res://assets/smoke_explosion/smoke_explosion.tscn")
-		var smoke = SMOKE_SCENE.instantiate()
-		get_parent().add_child(smoke)
-		smoke.global_position = global_position
+	if %Slime: %Slime.play_hurt()
+	if health == 0: killed_by_player()
+
+func killed_by_player():
+	was_killed_by_player.emit()
+	die()
+	
+func die():
+	queue_free()
+	const SMOKE_SCENE = preload("res://assets/smoke_explosion/smoke_explosion.tscn")
+	var smoke = SMOKE_SCENE.instantiate()
+	get_parent().add_child(smoke)
+	smoke.global_position = global_position

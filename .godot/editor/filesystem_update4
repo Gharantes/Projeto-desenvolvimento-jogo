@@ -1,2 +1,14 @@
 res://pistol/gun.tscn
 res://pistol/gun.gd
+res://game/ui/round_countdown/round_countdown.gd
+res://game/ui/round_countdown/round_countdown.tscn
+res://game/game.gd
+res://game/game.tscn
+res://characters/slime/mob.tscn
+res://characters/slime/mob.gd
+res://default_bus_layout.tres
+res://game/settings_menu/settings_menu.gd
+res://game/settings_menu/settings_menu.tscn
+res://global.gd
+res://game/ui/experience_bar/experience_bar.tscn
+res://game/ui/experience_bar/experience_bar.gd

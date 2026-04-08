@@ -1,25 +1,49 @@
 [gd_scene format=3 uid="uid://gvejiimw4qd0"]
 
+[ext_resource type="Script" uid="uid://s1bayun83cjs" path="res://game/ui/round_countdown/round_countdown.gd" id="1_pndao"]
+
 [node name="RoundCountdown" type="Control" unique_id=523677653]
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
+grow_horizontal = 2
+script = ExtResource("1_pndao")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1654031028]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
 grow_horizontal = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1812794336]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer" unique_id=304599568]
+layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1762692803]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer2" unique_id=71195604]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=598237797]
+[node name="RoundTypeLabel" type="Label" parent="HBoxContainer/PanelContainer2/MarginContainer" unique_id=21509012]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Round Countdown: 30"
+text = "Round Type: Day"
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer" unique_id=1812794336]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer" unique_id=1762692803]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="CountdownLabel" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer" unique_id=598237797]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Round Countdown: 10s"
+
+[node name="Timer" type="Timer" parent="." unique_id=1393679926]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

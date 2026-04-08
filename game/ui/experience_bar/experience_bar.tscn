@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bqqbpj2bk8p47"]
+
+[ext_resource type="Script" uid="uid://den2avocuyk5d" path="res://game/ui/experience_bar/experience_bar.gd" id="1_axdan"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_axdan"]
+bg_color = Color(0.19495642, 0.52506256, 0.26058722, 1)
+
+[node name="ExperienceBar" type="Control" unique_id=1680007669]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_axdan")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=465823016]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -54.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="LevelLabel" type="Label" parent="VBoxContainer" unique_id=1136432114]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Level: 1"
+
+[node name="ExperienceBar" type="ProgressBar" parent="VBoxContainer" unique_id=1691583173]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/fill = SubResource("StyleBoxFlat_axdan")
