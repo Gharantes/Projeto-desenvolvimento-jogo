@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://ce11bxhiyk7y8"]
 
 [ext_resource type="Texture2D" uid="uid://dk5b8a84a6n2h" path="res://assets/ground_shadow.png" id="1_gltu7"]
+[ext_resource type="Script" uid="uid://baamvdn536mda" path="res://trees/pine_tree.gd" id="1_jhxls"]
 [ext_resource type="Texture2D" uid="uid://bql1cc345qv7d" path="res://trees/pine_tree.png" id="2_iuyp8"]
+[ext_resource type="Texture2D" uid="uid://dxxcft08ahp0" path="res://trees/toco_simples.svg" id="4_j66o5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jhxls"]
 radius = 20.0
 
-[node name="PineTree" type="StaticBody2D" unique_id=1054235089]
+[sub_resource type="CircleShape2D" id="CircleShape2D_j66o5"]
+radius = 41.04875
+
+[node name="PineTree" type="StaticBody2D" unique_id=1054235089 groups=["tree"]]
+script = ExtResource("1_jhxls")
 
 [node name="GroundShadow" type="Sprite2D" parent="." unique_id=1884326542]
 modulate = Color(0.8560673, 0.8560673, 0.856067, 1)
@@ -15,9 +21,54 @@ scale = Vector2(0.7307692, 0.7307692)
 texture = ExtResource("1_gltu7")
 
 [node name="PineTree" type="Sprite2D" parent="." unique_id=759312819]
+unique_name_in_owner = true
 position = Vector2(1, -66)
 texture = ExtResource("2_iuyp8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1826516459]
 position = Vector2(2, -8)
 shape = SubResource("CircleShape2D_jhxls")
+
+[node name="CutPineTree" type="Sprite2D" parent="." unique_id=2075444295]
+unique_name_in_owner = true
+position = Vector2(2, -23)
+scale = Vector2(0.32184872, 0.32184872)
+texture = ExtResource("4_j66o5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1484861981]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1252780328]
+position = Vector2(2, -8)
+shape = SubResource("CircleShape2D_j66o5")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=894003424]
+position = Vector2(-42, -182)
+
+[node name="PressEBox" type="Control" parent="Marker2D" unique_id=109730808]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 106.0
+offset_bottom = 30.0
+
+[node name="Panel" type="Panel" parent="Marker2D/PressEBox" unique_id=1610470942]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Marker2D/PressEBox/Panel" unique_id=834868637]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press \"E\""
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

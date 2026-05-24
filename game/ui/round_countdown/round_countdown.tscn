@@ -43,6 +43,19 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "Round Countdown: 10s"
 
+[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer" unique_id=171731188]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer3" unique_id=1574744538]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="RoundLabel" type="Label" parent="HBoxContainer/PanelContainer3/MarginContainer" unique_id=545067547]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Round: 1"
+
 [node name="Timer" type="Timer" parent="." unique_id=1393679926]
 autostart = true
 

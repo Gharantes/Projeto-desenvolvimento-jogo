@@ -1,5 +1,7 @@
 extends Node
 
+var round_type = "Day"
+
 func _ready() -> void:
 	var config = ConfigFile.new()
 	if config.load("user://settings.cfg") == OK:

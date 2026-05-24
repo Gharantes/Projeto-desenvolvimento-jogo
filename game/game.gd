@@ -6,6 +6,7 @@ var do_spawn_mobs = true
 func _ready() -> void:
 	round_countdown.day_started.connect(_on_day_started)
 	round_countdown.night_started.connect(_on_night_started)
+	round_countdown.last_night_survived.connect(_on_last_night_survived)
 	_on_day_started()
 	
 func _on_day_started():
@@ -31,3 +32,6 @@ func _on_player_health_depleted() -> void:
 	
 func _mob_killed() -> void:
 	%ExperienceBar.add_experience(1)
+
+func _on_last_night_survived() -> void:
+	%GameWonScreen.activate(round_countdown.round_value)
