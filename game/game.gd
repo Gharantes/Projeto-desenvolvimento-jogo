@@ -8,14 +8,13 @@ const TREE_SCENE = preload("res://trees/pine_tree.tscn")
 const NUM_TREES = 8
 const MIN_DIST_FROM_CAMPFIRE = 250.0
 const MIN_DIST_FROM_PLAYER = 150.0
-const MAX_DIST_FROM_PLAYER = 600.0
+const MAX_DIST_FROM_PLAYER = 900.0
 
 func _ready() -> void:
 	round_countdown.day_started.connect(_on_day_started)
 	round_countdown.night_started.connect(_on_night_started)
 	round_countdown.last_night_survived.connect(_on_last_night_survived)
 	_on_day_started()
-	_spawn_trees()
 	%Campfire.campfire_extinguished.connect(_on_campfire_extinguished)
 
 func _process(_delta: float) -> void:
@@ -57,6 +56,8 @@ func _spawn_trees() -> void:
 func _on_day_started():
 	do_spawn_mobs = false
 	get_tree().call_group("mobs", "die")
+	get_tree().call_group("tree", "queue_free")
+	_spawn_trees()
 
 func _on_night_started():
 	do_spawn_mobs = true

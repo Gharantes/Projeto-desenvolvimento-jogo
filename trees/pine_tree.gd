@@ -18,6 +18,7 @@ func cut_wood():
 	TREE_IS_CUT = true
 	%PineTree.visible = false
 	%CutPineTree.visible = true
+	$CollisionShape2D.disabled = true
 	hide_popup()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
