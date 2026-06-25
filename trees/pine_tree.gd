@@ -3,8 +3,6 @@ extends StaticBody2D
 var POP_UP_VISIBLE = false
 var TREE_IS_CUT = false
 
-var add_wood = 0
-
 func _ready() -> void:
 	hide_popup()
 	%CutPineTree.visible = false
@@ -16,7 +14,8 @@ func _process(delta: float) -> void:
 		hide_popup()
 		
 func cut_wood():
-	add_wood += 1
+	global.wood_count += 1
+	TREE_IS_CUT = true
 	%PineTree.visible = false
 	%CutPineTree.visible = true
 	hide_popup()

@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://bletknihf31ma"]
+
+[ext_resource type="Script" uid="uid://cktf1snouyp0p" path="res://campfire/campfire.gd" id="1_cf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_body"]
+radius = 30.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_area"]
+radius = 70.0
+
+[node name="Campfire" type="StaticBody2D" unique_id=1032696348 groups=["campfire"]]
+script = ExtResource("1_cf")
+
+[node name="FireLabel" type="Label" parent="." unique_id=1648006126]
+offset_left = -24.0
+offset_top = -60.0
+offset_right = -24.0
+offset_bottom = -60.0
+theme_override_font_sizes/font_size = 48
+text = "🔥"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=267080656]
+shape = SubResource("CircleShape2D_body")
+
+[node name="TimerLabel" type="Label" parent="." unique_id=1215645830]
+unique_name_in_owner = true
+offset_left = -20.0
+offset_top = -105.0
+offset_right = -20.0
+offset_bottom = -105.0
+theme_override_font_sizes/font_size = 20
+text = "30"
+
+[node name="PressELabel" type="Label" parent="." unique_id=1437676133]
+unique_name_in_owner = true
+visible = false
+offset_left = -65.0
+offset_top = -130.0
+offset_right = -65.0
+offset_bottom = -130.0
+theme_override_font_sizes/font_size = 14
+text = "E: dar madeira"
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=927235199]
+unique_name_in_owner = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1745322213]
+shape = SubResource("CircleShape2D_area")
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_body_exited"]

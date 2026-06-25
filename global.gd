@@ -1,6 +1,7 @@
 extends Node
 
 var round_type = "Day"
+var wood_count: int = 0
 
 func _ready() -> void:
 	var config = ConfigFile.new()

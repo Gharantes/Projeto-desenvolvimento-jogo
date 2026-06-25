@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://csu601wgxyjld" path="res://game/game.gd" id="1_4fuuu"]
 [ext_resource type="PackedScene" uid="uid://3et1wn8i44be" path="res://characters/player/player.tscn" id="1_l1rk1"]
 [ext_resource type="PackedScene" uid="uid://rfge8x3nlu4r" path="res://game/pause_screen/pause_screen.tscn" id="2_4fuuu"]
-[ext_resource type="PackedScene" uid="uid://ce11bxhiyk7y8" path="res://trees/pine_tree.tscn" id="2_vasa2"]
 [ext_resource type="PackedScene" uid="uid://cxguhtibeeqqi" path="res://game/game_over_screen/game_over_screen.tscn" id="3_dxrkv"]
 [ext_resource type="PackedScene" uid="uid://cqughp7ro5w3" path="res://game/settings_menu/settings_menu.tscn" id="4_dakft"]
 [ext_resource type="PackedScene" uid="uid://gvejiimw4qd0" path="res://game/ui/round_countdown/round_countdown.tscn" id="5_u5opy"]
 [ext_resource type="PackedScene" uid="uid://bqqbpj2bk8p47" path="res://game/ui/experience_bar/experience_bar.tscn" id="6_y36n6"]
 [ext_resource type="PackedScene" uid="uid://b5i78r3u7b6j3" path="res://game/game_won_screen/game_won_screen.tscn" id="7_l8g03"]
+[ext_resource type="PackedScene" uid="uid://bletknihf31ma" path="res://campfire/campfire.tscn" id="8_camp1"]
 
 [sub_resource type="Curve2D" id="Curve2D_dxrkv"]
 _data = {
@@ -44,10 +44,29 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 visible = false
 
+[node name="WoodCounter" type="Label" parent="CanvasLayer" unique_id=100000001]
+unique_name_in_owner = true
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 200.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 20
+text = "Madeira: 0"
+
+[node name="CampfireMarker" type="Label" parent="CanvasLayer" unique_id=100000002]
+unique_name_in_owner = true
+offset_left = 16.0
+offset_top = 48.0
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 20
+text = "Fogueira →"
+
 [node name="GameBg" type="CanvasLayer" parent="." unique_id=489855572]
 layer = -1
 
 [node name="ColorRect" type="ColorRect" parent="GameBg" unique_id=1040995062]
+unique_name_in_owner = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -66,14 +85,9 @@ unique_name_in_owner = true
 position = Vector2(-56, -82)
 rotation = 1.5724343
 
-[node name="PineTree" parent="." unique_id=1054235089 instance=ExtResource("2_vasa2")]
-position = Vector2(428, 602)
-
-[node name="PineTree2" parent="." unique_id=1620788290 instance=ExtResource("2_vasa2")]
-position = Vector2(1508, 602)
-
-[node name="PineTree3" parent="." unique_id=1879471153 instance=ExtResource("2_vasa2")]
-position = Vector2(959, 171)
+[node name="Campfire" parent="." unique_id=100000003 instance=ExtResource("8_camp1")]
+unique_name_in_owner = true
+position = Vector2(700, 700)
 
 [node name="Timer" type="Timer" parent="." unique_id=1797227447]
 wait_time = 0.3
