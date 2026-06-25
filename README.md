@@ -51,3 +51,7 @@ Serão consideradas mecânicas:
      Plataformas que se movimentam
      Movimento aleatório de NPCs
      Área secreta
+
+TODO:
+- Powerups ao subir de nível.
+- Coleta de madeira para manter a fogueira acesa, se ela apagar, fim de jogo.
