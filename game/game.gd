@@ -12,11 +12,19 @@ const MAX_DIST_FROM_PLAYER = 900.0
 
 func _ready() -> void:
 	global.wood_count = 0
+	global.powerups = {"speed": 0, "health": 0, "damage": 0}
 	round_countdown.day_started.connect(_on_day_started)
 	round_countdown.night_started.connect(_on_night_started)
 	round_countdown.last_night_survived.connect(_on_last_night_survived)
 	_on_day_started()
 	%Campfire.campfire_extinguished.connect(_on_campfire_extinguished)
+	%ExperienceBar.level_up.connect(_on_level_up)
+
+func _on_level_up(new_level: int) -> void:
+	if new_level == 5:
+		$Player.add_second_gun()
+	else:
+		%PowerupScreen.activate()
 
 func _process(_delta: float) -> void:
 	%WoodCounter.text = "Madeira: %d" % global.wood_count

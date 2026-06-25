@@ -1,9 +1,10 @@
 extends Control
 
+signal level_up(new_level: int)
+
 var level = 1
 var needed_experience = 10
 var current_experience = 0
-
 var progress_bar_value = 0
 
 func _calc_progress_bar_value():
@@ -15,5 +16,6 @@ func add_experience(value: int) -> void:
 	if current_experience >= needed_experience:
 		level += 1
 		current_experience -= needed_experience
+		level_up.emit(level)
 	_calc_progress_bar_value()
 	%LevelLabel.text = "Level: " + str(level)

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bqqbpj2bk8p47" path="res://game/ui/experience_bar/experience_bar.tscn" id="6_y36n6"]
 [ext_resource type="PackedScene" uid="uid://b5i78r3u7b6j3" path="res://game/game_won_screen/game_won_screen.tscn" id="7_l8g03"]
 [ext_resource type="PackedScene" uid="uid://bletknihf31ma" path="res://campfire/campfire.tscn" id="8_camp1"]
+[ext_resource type="PackedScene" path="res://game/powerup_screen/powerup_screen.tscn" id="9_pwscr"]
 
 [sub_resource type="Curve2D" id="Curve2D_dxrkv"]
 _data = {
@@ -43,6 +44,9 @@ unique_name_in_owner = true
 [node name="GameWonScreen" parent="CanvasLayer" unique_id=64804670 instance=ExtResource("7_l8g03")]
 unique_name_in_owner = true
 visible = false
+
+[node name="PowerupScreen" parent="CanvasLayer" unique_id=100000004 instance=ExtResource("9_pwscr")]
+unique_name_in_owner = true
 
 [node name="WoodCounter" type="Label" parent="CanvasLayer" unique_id=100000001]
 unique_name_in_owner = true

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 signal health_depleted
 var health = 100.0
+var max_health = 100.0
 
 func _physics_process(delta: float) -> void:
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -12,7 +13,7 @@ func _physics_process(delta: float) -> void:
 		%HappyBoo.play_walk_animation()
 	else:
 		%HappyBoo.play_idle_animation()
-	
+
 	const DAMAGE_RATE = 100.0
 	var overlapping_mobs = %Hurtbox.get_overlapping_bodies()
 	if overlapping_mobs.size() > 0:
@@ -20,3 +21,14 @@ func _physics_process(delta: float) -> void:
 		%ProgressBar.value = health
 		if health <= 0:
 			health_depleted.emit()
+
+func apply_health_powerup() -> void:
+	max_health += 25.0
+	health = min(health + 25.0, max_health)
+	%ProgressBar.max_value = max_health
+	%ProgressBar.value = health
+
+func add_second_gun() -> void:
+	var second_gun = preload("res://pistol/gun.tscn").instantiate()
+	second_gun.position = Vector2(0, 35)
+	add_child(second_gun)

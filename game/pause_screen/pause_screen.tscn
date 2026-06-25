@@ -39,6 +39,13 @@ layout_mode = 2
 text = "Game is Paused"
 horizontal_alignment = 1
 
+[node name="PowerupList" type="Label" parent="VBoxContainer" unique_id=100000005]
+unique_name_in_owner = true
+layout_mode = 2
+text = ""
+horizontal_alignment = 1
+autowrap_mode = 3
+
 [node name="Resume Button" type="Button" parent="VBoxContainer" unique_id=1589596989]
 layout_mode = 2
 text = "Resume"

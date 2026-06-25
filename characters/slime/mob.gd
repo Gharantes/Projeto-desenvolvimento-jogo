@@ -13,10 +13,10 @@ func _physics_process(delta: float) -> void:
 	velocity = direction * 300.0
 	move_and_slide()
 
-func take_damage():
-	health -= 1
+func take_damage(damage: int = 1):
+	health -= damage
 	if %Slime: %Slime.play_hurt()
-	if health == 0: killed_by_player()
+	if health <= 0: killed_by_player()
 
 func killed_by_player():
 	was_killed_by_player.emit()
