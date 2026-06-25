@@ -11,6 +11,7 @@ const MIN_DIST_FROM_PLAYER = 150.0
 const MAX_DIST_FROM_PLAYER = 900.0
 
 func _ready() -> void:
+	global.wood_count = 0
 	round_countdown.day_started.connect(_on_day_started)
 	round_countdown.night_started.connect(_on_night_started)
 	round_countdown.last_night_survived.connect(_on_last_night_survived)
